@@ -1,0 +1,227 @@
+Gabriel Sardinha Mascarenhas 
+9854
+
+
+
+====================================================
+EX1
+#include <stdio.h>
+int main (){
+
+int n[10];
+int q2=0;
+int q3=0;
+int q5=0;
+int i;
+
+printf("insira dez numeros inteiros");
+
+
+for(i=0;i<10;i++){
+    scanf("%d",&n[i]);
+
+
+    if(n[i]==2){
+        q2++;
+    }
+    if(n[i]==3){
+        q3++;
+    }
+    if(n[i]==5){
+        q5++;
+    }
+}
+
+
+    printf("quantidade de 2:%d\nquantidade de 3:%d\nquantidade 5:%d\n",q2,q3,q5)
+return 0;
+}
+
+================================================================================
+EX2
+#include<stdio.h>
+
+int main () {
+
+int n[10];
+int qtd=0;
+int i;
+
+printf("insira dez numeros inteiros");
+
+for(i=0;i<10;i++){
+    scanf("%d",&n[i]);
+}
+for(i=0;i<10;i++){
+        if(n[i]%2!=0){
+            printf("%d",n[i]);
+            qtd++;
+        }
+        }
+
+        printf("\n%d",qtd);
+
+    return 0;
+}
+=================================================================================
+EX3
+#include<stdio.h>
+int main(){
+
+int n[15];
+int i;
+int cod;
+
+printf(" insira 15 numeros inteiros");
+
+for(i=0;i<15;i++){
+    scanf("%d",&n[i]);
+}
+printf("insira o codigo\n1-ordem direta\n2-ordem inversa\n");
+scanf("%d",&cod);
+
+if(cod==1){
+    for(i=0;i<15;i++){
+        printf("%d",n[i]);
+    }
+}
+if(cod==2){
+    for(i=14;i>=0;--i){
+        printf("%d\n",n[i]);
+    }
+}
+if(cod!=1&&cod!=2){
+    printf("codigo invalido");
+}
+return 0;
+}
+==================================================================================
+EX4
+#include<stdio.h>
+int main(){
+int n[8];
+int x,y;
+int i;
+int soma;
+printf("insira as 8 posicoes do vetor ");
+for(i=0;i<8;i++){
+scanf("%d",&n[i]);
+printf("%d ",n[i]);
+}
+printf("escolha dois valores entre 0 e 7");
+scanf("%d",&x);
+scanf("%d",&y);
+
+soma=n[x]+n[y];
+
+printf("%d",soma);
+return 0;
+}
+========================================================================================
+EX5
+#include<stdio.h>
+int main(){
+int n[6];
+int nump=0;
+int numi=0;
+int soma=0;
+int soma2=0;
+int par=0;
+int impar=0;
+int i;
+printf ("insira os seis numeros");
+for(i=0;i<6;i++){
+    scanf("%d",&n[i]);
+}
+for(i=0;i<6;i++){
+if(n[i]%2==0){
+        printf("%d ",n[i]);
+        nump=n[i];
+        soma+=nump;
+}
+}
+ printf("soma pares: %d ",soma);
+for(i=0;i<6;i++){
+    if(n[i]%2==1){
+        printf(" %d ",n[i]);
+        numi=n[i];
+        soma2+=numi;
+    }
+    }
+  printf("soma impares: %d",soma2);
+
+
+
+return 0;
+}
+===============================================================
+EX6
+#include<stdio.h>
+int main(){
+int n[6];
+int nump=0;
+int numi=0;
+int soma=0;
+int soma2=0;
+int par=0;
+int impar=0;
+int i;
+printf ("insira os seis numeros");
+for(i=0;i<6;i++){
+    scanf("%d",&n[i]);
+}
+for(i=0;i<6;i++){
+if(n[i]%2==0){
+        printf("%d ",n[i]);
+        nump=n[i];
+        soma+=nump;
+}
+}
+ printf("soma pares: %d ",soma);
+for(i=0;i<6;i++){
+    if(n[i]%2==1){
+        printf(" %d ",n[i]);
+        numi=n[i];
+        soma2+=numi;
+    }
+    }
+  printf("soma impares: %d",soma2);
+
+
+
+return 0;
+}
+========================================
+EX7
+#include<stdio.h>
+int main(){
+int z,x,y;
+    int n[50], n1[50];
+
+    scanf("%d", &z);
+
+    n[0] = 1;
+    printf("1\n");
+
+    for (x = 1; x < z; x++) {
+        n1[0] = 1;
+        n1[x] = 1;
+
+        for ( y = 1; y < x; y++) {
+            n1[y] = n[y - 1] + n[y];
+        }
+
+        for ( y = 0; y <= x; y++) {
+            printf("%d ", n1[y]);
+        }
+        printf("\n");
+
+        for ( y = 0; y <= x; y++) {
+            n[y] = n1[y];
+        }
+    }
+
+
+
+return 0;
+}

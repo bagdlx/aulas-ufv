@@ -1,0 +1,374 @@
+Gabriel Sardinha 
+Matrícula:9854
+
+=====================================================
+EX1:
+#include<stdio.h>
+
+void msg(){
+printf("==============================\n");
+printf("+Programacao(SIN 110)+\n");
+printf("+-------------------------------------+\n");
+printf("+Universidade Federal de Vicosa\n+Campus Rio Paranaiba+\n");
+printf("==================================\n");
+}
+
+
+int main (){
+
+msg();
+
+return 0;
+}
+========================================================
+EX2:
+#include <stdio.h>
+struct sData{
+
+int dia,mes,ano;
+};
+
+void exibe(struct sData d){
+
+switch(d.mes){
+case 1:
+printf("%d de Janeiro de %d\n",d.dia,d.ano);
+break;
+
+
+case 2:
+printf("%d de fevereiro de %d",d.dia,d.ano);
+break;
+
+case 3:
+printf("%d de marco de %d",d.dia,d.ano);
+break;
+
+case 4:
+printf("%d de abril de %d",d.dia,d.ano);
+break;
+
+case 5:
+printf("%d de maio de %d",d.dia,d.ano);
+break;
+
+case 6:
+printf("%d de junho de %d",d.dia,d.ano);
+break;
+
+case 7:
+printf("%d de julho de %d",d.dia,d.ano);
+break;
+
+case 8:
+printf("%d de agosto de %d",d.dia,d.ano);
+break;
+
+case 9:
+printf("%d de setembro de %d",d.dia,d.ano);
+break;
+
+case 10:
+printf("%d de outubro de %d",d.dia,d.ano);
+break;
+
+case 11:
+printf("%d de novembro de %d",d.dia,d.ano);
+break;
+
+case 12:
+printf("%d de dezembro de %d",d.dia,d.ano);
+break;
+
+default:
+printf("invalido\n");
+}
+}
+
+int retornadia(){
+int dia;
+do{
+printf("Entre com o dia:\n");
+scanf("%d",&dia);
+
+
+}while(dia<1||dia>31);
+
+return dia;
+}
+
+int retornames(){
+
+int mes;
+do{
+
+printf("entre com o mes:\n");
+scanf("%d",&mes);
+}while(mes<1||mes>12);
+
+return mes;
+}
+
+
+int retornaano(){
+int ano;
+do{
+
+printf("entre com o ano:\n");
+scanf("%d",&ano);
+
+}while(ano<1||ano>2025);
+
+}
+
+int main(){
+
+struct sData dat;
+
+dat.dia=retornadia();
+dat.mes=retornames();
+dat.ano=retornaano();
+
+exibe(dat);
+
+
+
+
+
+
+
+
+
+return 0;
+}
+===================================================================
+EX3:
+#include <stdio.h>
+
+struct sNum{
+int n1,n2;
+};
+
+void tam(struct sNum n){
+if(n.n1>n.n2){
+printf("N1 maior\n");
+printf("N2 menor\n");
+}
+else if(n.n1<n.n2){
+printf("N2 maior\n");
+printf("N1 menor\n");
+}
+}
+
+
+int num1(){
+
+int n1;
+
+printf("Insira o valor de n1:\n");
+scanf("%d",&n1);
+
+return n1;
+
+}
+
+int num2(){
+
+int n2;
+
+printf("Insira o valor de n2:\n");
+scanf("%d",&n2);
+
+return n2;
+}
+
+
+int main (){
+
+struct sNum numero;
+
+numero.n1=num1();
+
+numero.n2=num2();
+
+tam(numero);
+
+
+
+
+
+
+
+
+
+return 0;
+}
+============================================================
+EX4:
+#include<stdio.h>
+
+struct sConsumo{
+
+int km;
+int lt;
+};
+
+int quilom(){
+
+int km;
+printf("Insira a distancia em Km:\n");
+scanf("%d",&km);
+
+return km;
+
+}
+
+int litros(){
+int lt;
+
+printf("Insira a quantidade de Litros consumidos:\n");
+scanf("%d",&lt);
+return lt;
+}
+
+void eco (struct sConsumo c ){
+
+if(c.km/c.lt<8){
+printf("Venda o carro!\n");
+}
+else if(c.km/c.lt>=8&&c.km/c.lt<=14){
+printf("Economico\n");
+}
+else if(c.km/c.lt>14){
+printf("Super economico\n");
+}
+
+}
+
+
+
+int main (){
+
+struct sConsumo con;
+
+con.km=quilom();
+con.lt=litros();
+
+eco(con);
+
+
+return 0;
+}
+==============================================================================
+EX5:
+#include<stdio.h>
+
+struct sDados{
+
+int n1,n2,i;
+
+
+};
+
+
+void funcao(struct sDados d){
+
+for(d.i=1;d.i<5;d.i++){
+        if(d.i!=0){
+    d.n1=(d.n1*d.n1)+1;
+    d.n2=d.n2+3;
+    printf("%d/%d\n",d.n1,d.n2);
+}
+}
+}
+
+int num1(){
+int n1;
+
+printf("entre com o valor de n1:\n");
+scanf("%d",&n1);
+return n1;
+}
+
+
+int num2(){
+int n2;
+
+printf("entre com o valor de n2:\n");
+scanf("%d",&n2);
+
+return n2;
+}
+
+
+int main (void){
+
+struct sDados dt;
+
+dt.n1=num1();
+dt.n2=num2();
+
+funcao(dt);
+
+return 0;
+
+}
+===============================================
+EX6:
+#include<stdio.h>
+
+int funcao (int mat[5][5]){
+
+    int soma = 0;
+    int i;
+
+    for(i = 0; i<5; i++){
+        soma += mat[i][4-i];
+    }
+
+    return soma;
+}
+
+int main (void){
+
+    int mat [5][5] = {
+    {0,0,0,0,1},
+    {0,0,0,1,0},
+    {0,0,1,0,0},
+    {0,1,0,0,0},
+    {1,0,0,0,0}
+    };
+
+    int soma_inversa = funcao(mat);
+
+    printf("A soma da diagonal inversa eh: %d", soma_inversa);
+
+    return 0;
+}
+==================================================
+EX7:#include<stdio.h>
+#include<string.h>
+
+void tamanho(char *str,int *strsize){
+
+strlen(str);
+*strsize=strlen(str);
+}
+
+int main (){
+
+char palavra[50];
+int caract=0;
+
+printf ("entre com uma string:\n");
+gets(palavra);
+
+tamanho(palavra,&caract);
+
+
+printf("A quantidade de caracteres sao:%d\n",caract);
+
+return 0;
+
+}
+=========================================

@@ -1,0 +1,340 @@
+Gabriel Sardinha 
+9854
+============================================================
+
+EX1:
+
+#include<stdio.h>
+
+
+struct hr{
+int hora,min,seg;
+
+};
+
+int main(){
+
+struct hr horario;
+
+printf("Entre com a hora:\n");
+scanf("%d",&horario.hora);
+
+printf("Entre com os minutos:\n");
+scanf("%d",&horario.min);
+
+printf("Entre com os segundos:\n");
+scanf("%d",&horario.seg);
+
+printf("%d:%d:%d",horario.hora,horario.min,horario.seg);
+
+
+
+
+
+
+return 0;
+}
+==========================================================
+EX2:
+#include<stdio.h>
+
+struct ender{
+
+char nome_rua[20];
+int num;
+char cidade[20];
+char estado[3];
+int cep;
+};
+
+int main (){
+
+struct ender endereco;
+
+    printf("Entre com o nome da rua:");
+        gets(endereco.nome_rua);
+    printf("Entre com o numero:");
+        scanf("%d", &endereco.num);
+        fflush(stdin);
+    printf("Entre com o nome da cidade:");
+        gets(endereco.cidade);
+    printf("Entre com o estado:");
+        gets(endereco.estado);
+    printf("Entre com o CEP`:");
+        scanf("%d", &endereco.cep);
+
+
+printf("%s\n%d\n%s\n%s\n%d\n",endereco.nome_rua,endereco.num,endereco.cidade,endereco.estado,endereco.cep);
+
+
+
+
+
+return 0;
+}
+===============================================================
+EX3:
+
+#include<stdio.h>
+
+struct ender{
+
+char nome_rua[20];
+int num;
+char cidade[20];
+char estado[3];
+int cep;
+};
+
+int main (){
+
+struct ender endereco;
+
+    printf("Entre com o nome da rua:");
+        gets(endereco.nome_rua);
+    printf("Entre com o numero:");
+        scanf("%d", &endereco.num);
+        fflush(stdin);
+    printf("Entre com o nome da cidade:");
+        gets(endereco.cidade);
+    printf("Entre com o estado:");
+        gets(endereco.estado);
+    printf("Entre com o CEP`:");
+        scanf("%d", &endereco.cep);
+
+
+printf("%s\n%d\n%s\n%s\n%d\n",endereco.nome_rua,endereco.num,endereco.cidade,endereco.estado,endereco.cep);
+
+
+
+
+
+return 0;
+}
+=============================================================================================
+EX4:
+#include<stdio.h>
+#define nota 60.0
+
+
+struct aluno{
+char nome[20];
+int matricula;
+
+float n1,n2,n3;
+
+};
+
+int main(){
+
+int i;
+int nome_maior_nota;
+int maiormed=0;
+int menormed=0;
+
+float soma[5],media[5];
+float maior_valp1;
+
+struct aluno al[5];
+
+
+        for(i=0;i<5;i++){
+
+     printf("Entre com a matricula:\n");
+    scanf("%d",&al[i].matricula);
+
+    fflush(stdin);
+
+    printf("Entre com o nome do aluno:\n");
+    gets(al[i].nome);
+
+    printf("Nota da P1:\n");
+    scanf("%f",&al[i].n1);
+
+    printf("Nota da P2:\n");
+    scanf("%f",&al[i].n2);
+
+    printf("Nota da P3:\n");
+    scanf("%f",&al[i].n3);
+        }
+
+
+    maior_valp1=al[0].n1;
+
+
+    for(i=1;i<5;i++){
+
+        if(al[i].n1>maior_valp1){
+
+            maior_valp1=al[i].n1;
+            nome_maior_nota=i;
+        }
+        }
+
+    for(i=0;i<5;i++){
+        soma[i]=al[i].n1+al[i].n2+al[i].n3;
+        media[i]=soma[i]/3;
+    }
+
+        for(i=1;i<5;i++){
+            if(media[i]>media[maiormed]){
+                maiormed=i;
+        }
+            if(media[i]<media[menormed]){
+                menormed=i;
+
+            }
+        }
+
+        printf("\n%s\n",al[nome_maior_nota].nome);
+        printf("%s\n",al[maiormed].nome);
+        printf("%s\n",al[menormed].nome);
+
+
+        for(i=0;i<5;i++){
+            if(media[i]>=nota){
+                printf("aprovado\n");
+
+            }
+            else{
+                printf("Reprovado\n");
+            }
+        }
+
+return 0;
+}
+============================================================
+EX5:
+
+#include<stdio.h>
+
+struct sCadastro{
+char nome[20];
+float salar;
+int ident;
+int cpf;
+char est_civ[20];
+int tel;
+int idade;
+char sexo[20];
+
+struct endereco{
+char rua[20];
+char bairro[20];
+char cidade[20];
+char est[3];
+int cep;
+
+
+}end;
+};
+
+
+int main (){
+
+struct sCadastro cad[7];
+int i;
+
+for(i=0;i<7;i++){
+
+    fflush(stdin);
+    printf("Insira o nome:\n");
+    gets(cad[i].nome);
+
+    printf("Insira o sexo:\n");
+    gets(cad[i].sexo);
+
+    printf("insira o estado civil:\n");
+    gets(cad[i].est_civ);
+
+    printf("insira a identidade:\n");
+    scanf("%d",&cad[i].ident);
+
+    printf("Insira o telefone:\n");
+    scanf("%d",&cad[i].tel);
+
+    printf("Insira o CPF:\n");
+    scanf("%d",&cad[i].cpf);
+
+    printf("Insira a idade:\n");
+    scanf("%d",&cad[i].idade);
+
+    printf("Insira o salario:\n");
+    scanf("%d",&cad[i].salar);
+
+    fflush(stdin);
+
+    printf("Insira a rua:\n");
+    gets(cad[i].end.rua);
+
+    printf("Insira o bairro:\n");
+    gets(cad[i].end.bairro);
+
+    printf("Insira a cidade:\n");
+    gets(cad[i].end.cidade);
+
+    printf("Insira o estado:\n");
+    gets(cad[i].end.est);
+
+    printf("Insira o CEP:\n");
+    scanf("%d",&cad[i].end.cep);
+
+}
+
+int maior_id=cad[0].idade;
+
+int idmaior=0;
+
+
+for(i=0;i<7;i++){
+
+    if(cad[i].idade>maior_id){
+        maior_id=cad[i].idade;
+        idmaior=i;
+    }
+    }
+
+    printf("\nPessoa com maior idade:%s\n",cad[idmaior].nome);
+
+    printf("\nPessoas do sexo masculino:\n");
+
+    for(i=0;i<7;i++){
+        if(cad[i].sexo[0]=='M'||cad[i].sexo[0]=='m'){
+            printf("%s\n",cad[i].nome);
+        }
+        }
+    printf("\nPessoas com salario maior que 1000:\n");
+    for(i=0;i<7;i++){
+        if(cad[i].salar>1000){
+            printf("%s\n",cad[i].nome);
+        }
+        }
+
+        int ident_1;
+
+        printf("\nInsira a identidade que deseja buscar:\n");
+        scanf("%d",&ident_1);
+
+        for(i=0;i<7;i++){
+
+            if(cad[i].ident==ident_1){
+
+                printf("\nDados da pessoa com identidade %d:\n",ident_1);
+                printf("Nome:%s\n",cad[i].nome);
+                printf("Idade:%d\n",cad[i].idade);
+                printf("Sexo:%s\n",cad[i].sexo);
+                printf("Estado civil:%s\n",cad[i].est_civ);
+                printf("Salario:%.2f\n",cad[i].salar);
+                printf("Telefone:%d\n",cad[i].tel);
+                printf("CPF:%d\n",cad[i].cpf);
+                printf("Rua:%s\n",cad[i].end.rua);
+                printf("Bairro:%s\n",cad[i].end.bairro);
+                printf("Cidade:%s\n",cad[i].end.cidade);
+                printf("Estado:%s\n",cad[i].end.est);
+                printf("CEP:%d\n",cad[i].end.cep);
+            }
+            }
+
+        return 0;
+}
+
